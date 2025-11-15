@@ -16,7 +16,7 @@ export const Canvas: React.FC = () => {
             className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-colors"
             onClick={() => handleComponentClick(component)}
           >
-            زر
+            {component.props?.text || 'زر'}
           </button>
         );
       case 'input':
@@ -34,7 +34,7 @@ export const Canvas: React.FC = () => {
             className="bg-white border border-gray-200 rounded-lg p-4 shadow-sm"
             onClick={() => handleComponentClick(component)}
           >
-            <h3 className="font-semibold mb-2">عنوان البطاقة</h3>
+            <h3 className="font-semibold mb-2">{component.props?.text || 'عنوان البطاقة'}</h3>
             <p className="text-gray-600">محتوى البطاقة يظهر هنا</p>
           </div>
         );
@@ -44,7 +44,7 @@ export const Canvas: React.FC = () => {
             className="text-gray-800"
             onClick={() => handleComponentClick(component)}
           >
-            هذا نص يمكن تعديله
+            {component.props?.text || 'هذا نص يمكن تعديله'}
           </p>
         );
       default:
