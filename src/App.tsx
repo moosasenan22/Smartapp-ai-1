@@ -4,12 +4,12 @@ import { BuilderProvider } from './contexts/BuilderContext';
 import Layout from './components/layout/Layout';
 import Dashboard from './pages/Dashboard';
 import AIAssistantPage from './pages/AIAssistantPage';
-import BuilderPage from './pages/BuilderPage';
-import AIPlayground from './pages/AIPlayground';
 import AnalyticsPage from './pages/AnalyticsPage';
 import IntegrationsPage from './pages/IntegrationsPage';
 import MyProjectsPage from './pages/MyProjectsPage';
 import SettingsPage from './pages/SettingsPage';
+import BuilderPage from './pages/BuilderPage';
+import AIPlayground from './pages/AIPlayground';
 
 function App() {
   return (
