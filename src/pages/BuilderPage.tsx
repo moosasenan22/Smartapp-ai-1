@@ -6,7 +6,7 @@ import PropertiesPanel from '../components/builder/PropertiesPanel';
 import { useBuilderActions } from '../hooks/useBuilder';
 
 const BuilderContent: React.FC = () => {
-  const { addComponent } = useBuilderActions();
+  const { addComponent, clearCanvas, components } = useBuilderActions();
 
   const handleComponentSelect = (component: any) => {
     addComponent(component);
@@ -21,23 +21,19 @@ const BuilderContent: React.FC = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-          {/* لوحة المكونات */}
           <div className="lg:col-span-3">
             <ComponentPalette onComponentSelect={handleComponentSelect} />
           </div>
 
-          {/* منطقة التصميم */}
           <div className="lg:col-span-6">
             <Canvas />
           </div>
 
-          {/* لوحة الخصائص */}
           <div className="lg:col-span-3">
             <PropertiesPanel />
           </div>
         </div>
 
-        {/* شريط الأدوات */}
         <div className="mt-6 bg-white rounded-lg shadow-sm p-4">
           <div className="flex gap-4 justify-center">
             <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
@@ -46,9 +42,18 @@ const BuilderContent: React.FC = () => {
             <button className="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors">
               👁️ معاينة
             </button>
+            <button 
+              onClick={clearCanvas}
+              className="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition-colors"
+            >
+              🗑️ مسح الكل
+            </button>
             <button className="bg-purple-600 text-white px-6 py-2 rounded-lg hover:bg-purple-700 transition-colors">
               ⬇️ تصدير الكود
             </button>
+          </div>
+          <div className="mt-3 text-center text-sm text-gray-600">
+            {components.length} مكون في التصميم
           </div>
         </div>
       </div>
