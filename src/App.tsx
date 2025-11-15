@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
 import { BuilderProvider } from './contexts/BuilderContext';
@@ -26,12 +25,8 @@ function App() {
               <Route path="/integrations" element={<IntegrationsPage />} />
               <Route path="/my-projects" element={<MyProjectsPage />} />
               <Route path="/settings" element={<SettingsPage />} />
-              
-              {/* 🆕 المسارات الجديدة من smartapp-ai-builder */}
               <Route path="/builder" element={<BuilderPage />} />
               <Route path="/ai-playground" element={<AIPlayground />} />
-              
-              {/* Fallback route */}
               <Route path="*" element={<Dashboard />} />
             </Routes>
           </Layout>
